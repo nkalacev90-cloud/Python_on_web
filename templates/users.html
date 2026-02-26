@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Пользователи</title>
+</head>
+<body>
+    <h1>Список пользователей</h1>
+    
+    {% for user in users %}
+        <div class="user">
+            {% if user.login_count > 10 %}
+                <span style="color:red;">{{ user.login }}</span>
+            {% else %}
+                 <p>{{ user.login }}</p>
+            {% endif %}
+            <p>Заходов: {{ user.login_count }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>
